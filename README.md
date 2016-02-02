@@ -4,7 +4,7 @@ For millions of people who bike, run, or swim with non-smart tracking devices, t
 After writing my ride stats in a text file for a month, I realized that this would be a great simple app to have on my Pebble. 
 
 Currently in development, the following are roadmap todos:
-- [ ] Configure basic list UI on Pebble
+- [x] Configure basic list UI on Pebble
 - [ ] Create input form for saving data on Pebble
 - [ ] Create statistics calculations and UI
 - [ ] Setup Firebase database to keep and serve data
