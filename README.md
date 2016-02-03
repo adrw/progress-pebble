@@ -1,6 +1,8 @@
 # Progress for Pebble
-Site for my pebble app using Github Project Pages.
+Site for my [Progress for Pebble](https://github.com/andrewparadi/progress-pebble) app using Github Project Pages.
 
 Install Progress from the private nightly build [here](https://apps.getpebble.com/en_US/application/56ad85eed3cf022d44000001)
 
 Email progress at andrewparadi.com to join the waitlist.
+
+Checkout more of my projects at [andrewparadi.com](http://andrewparadi.com)
