@@ -6,6 +6,15 @@
 
 var UI = require('ui');
 var Vector2 = require('vector2');
+var menuItems = [{
+      title: 'Log Activity',
+      subtitle: 'Track time, km, miles'
+      toshow: logform
+    }, {
+      title: 'Stats',
+      subtitle: 'See your progress'
+      toshow: stats
+    }]
 var userlog = [{
   title: '13.2km in 44:33',
   subtitle: 'Aug 13, 2016'
@@ -19,6 +28,71 @@ var userlog = [{
   title: '15.8km in 55:21',
   subtitle: 'Aug 4, 2016'
 }];
+var numbers = [{
+  title: '0'
+  subtitle: ''
+}, {
+  title: '1'
+  subtitle: ''
+}, {
+  title: '2'
+  subtitle: ''
+}, {
+  title: '3'
+  subtitle: ''
+}, {
+  title: '4'
+  subtitle: ''
+}, {
+  title: '5'
+  subtitle: ''
+}, {
+  title: '6'
+  subtitle: ''
+}, {
+  title: '7'
+  subtitle: ''
+}, {
+  title: '8'
+  subtitle: ''
+}, {
+  title: '9'
+  subtitle: ''
+}, {
+  title: '10'
+  subtitle: ''
+}, {
+  title: '11'
+  subtitle: ''
+}, {
+  title: '12'
+  subtitle: ''
+}, {
+  title: '13'
+  subtitle: ''
+}, {
+  title: '14'
+  subtitle: ''
+}, {
+  title: '15'
+  subtitle: ''
+}, {
+  title: '16'
+  subtitle: ''
+}, {
+  title: '17'
+  subtitle: ''
+}, {
+  title: '18'
+  subtitle: ''
+}, {
+  title: '19'
+  subtitle: ''
+}, {
+  title: '20'
+  subtitle: ''
+}]
+
 
 // var main = new UI.menu({
 //   sections: [{
@@ -39,20 +113,25 @@ var userlog = [{
 //   });
 // main.show();
 
+var logform = new UI.Menu({
+  sections [{
+    title: 'Distance in km/miles'
+    items: numbers
+  }]
+});
+
 var main = new UI.Menu({
   sections: [{
     title: 'Progress',
-    items: [{
-      title: 'Log Activity',
-      subtitle: 'Track time, km, miles'
-    }, {
-      title: 'Stats',
-      subtitle: 'See your progress'
-    }]} , {
+    items: menuItems } , {
     title: 'Log',
     items: userlog
   }]
 });
+
+main.on('select', function(e) {
+  e.item.toshow.show();
+})
 
 main.show();
 
