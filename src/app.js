@@ -6,15 +6,90 @@
 
 var UI = require('ui');
 var Vector2 = require('vector2');
+var numbers = [{
+  title: '0',
+  subtitle: ''
+}, {
+  title: '1',
+  subtitle: ''
+}, {
+  title: '2',
+  subtitle: ''
+}, {
+  title: '3',
+  subtitle: ''
+}, {
+  title: '4',
+  subtitle: ''
+}, {
+  title: '5',
+  subtitle: ''
+}, {
+  title: '6',
+  subtitle: ''
+}, {
+  title: '7',
+  subtitle: ''
+}, {
+  title: '8',
+  subtitle: ''
+}, {
+  title: '9',
+  subtitle: ''
+}, {
+  title: '10',
+  subtitle: ''
+}, {
+  title: '11',
+  subtitle: ''
+}, {
+  title: '12',
+  subtitle: ''
+}, {
+  title: '13',
+  subtitle: ''
+}, {
+  title: '14',
+  subtitle: ''
+}, {
+  title: '15',
+  subtitle: ''
+}, {
+  title: '16',
+  subtitle: ''
+}, {
+  title: '17',
+  subtitle: ''
+}, {
+  title: '18',
+  subtitle: ''
+}, {
+  title: '19',
+  subtitle: ''
+}, {
+  title: '20',
+  subtitle: ''
+}];
+var stats = new UI.Card({
+  title: "My Progress",
+  body: "Sed aliquam augue et condimentum faucibus. Duis viverra felis urna, sit amet vulputate tellus aliquam at. Phasellus dignissim feugiat ante, sit amet venenatis augue varius id. Sed elit magna, tempus vel ex et, vulputate tristique felis. Quisque egestas quam at tortor accumsan tincidunt. Proin sapien eros, varius pharetra lectus commodo, varius posuere tortor. Donec placerat sem ut rutrum rhoncus. Quisque vestibulum ante sed lectus efficitur consectetur. Sed tincidunt bibendum blandit. Donec viverra blandit augue, ac condimentum nisl feugiat quis. Donec efficitur tempus ligula, non posuere augue sagittis ac. In tristique metus a dolor consectetur, et congue ligula molestie. Pellentesque efficitur in velit quis congue. Proin gravida in felis et ultrices. Aenean ut dolor mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+  scrollable: true
+});
+var logform = new UI.Menu({
+  sections: [{
+    title: 'Distance in km/miles',
+    items: numbers
+  }]
+});
 var menuItems = [{
       title: 'Log Activity',
-      subtitle: 'Track time, km, miles'
+      subtitle: 'Track time, km, miles',
       toshow: logform
     }, {
       title: 'Stats',
-      subtitle: 'See your progress'
+      subtitle: 'See your progress',
       toshow: stats
-    }]
+    }];
 var userlog = [{
   title: '13.2km in 44:33',
   subtitle: 'Aug 13, 2016'
@@ -28,71 +103,6 @@ var userlog = [{
   title: '15.8km in 55:21',
   subtitle: 'Aug 4, 2016'
 }];
-var numbers = [{
-  title: '0'
-  subtitle: ''
-}, {
-  title: '1'
-  subtitle: ''
-}, {
-  title: '2'
-  subtitle: ''
-}, {
-  title: '3'
-  subtitle: ''
-}, {
-  title: '4'
-  subtitle: ''
-}, {
-  title: '5'
-  subtitle: ''
-}, {
-  title: '6'
-  subtitle: ''
-}, {
-  title: '7'
-  subtitle: ''
-}, {
-  title: '8'
-  subtitle: ''
-}, {
-  title: '9'
-  subtitle: ''
-}, {
-  title: '10'
-  subtitle: ''
-}, {
-  title: '11'
-  subtitle: ''
-}, {
-  title: '12'
-  subtitle: ''
-}, {
-  title: '13'
-  subtitle: ''
-}, {
-  title: '14'
-  subtitle: ''
-}, {
-  title: '15'
-  subtitle: ''
-}, {
-  title: '16'
-  subtitle: ''
-}, {
-  title: '17'
-  subtitle: ''
-}, {
-  title: '18'
-  subtitle: ''
-}, {
-  title: '19'
-  subtitle: ''
-}, {
-  title: '20'
-  subtitle: ''
-}]
-
 
 // var main = new UI.menu({
 //   sections: [{
@@ -113,13 +123,6 @@ var numbers = [{
 //   });
 // main.show();
 
-var logform = new UI.Menu({
-  sections [{
-    title: 'Distance in km/miles'
-    items: numbers
-  }]
-});
-
 var main = new UI.Menu({
   sections: [{
     title: 'Progress',
@@ -131,7 +134,7 @@ var main = new UI.Menu({
 
 main.on('select', function(e) {
   e.item.toshow.show();
-})
+});
 
 main.show();
 
