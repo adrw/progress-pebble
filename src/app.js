@@ -5,86 +5,163 @@
  */
 
 var UI = require('ui');
-var Vector2 = require('vector2');
-var numbers = [{
-  title: '0',
-  subtitle: ''
+//var Vector2 = require('vector2');
+var theDistance = 0;
+var theTime = 0;
+var logTime, logDist, dist, time, stats, submit;
+
+var time = [{
+  title: 'Done',
+  digit: -1,
+  toshow: stats
 }, {
-  title: '1',
-  subtitle: ''
+  title: (10*theTime + '0')/1000,
+  digit: 0,
+  toshow: logTime
 }, {
-  title: '2',
-  subtitle: ''
+  title: (10*theTime + '1')/1000,
+  digit: 1,
+  toshow: logTime
 }, {
-  title: '3',
-  subtitle: ''
+  title: (10*theTime + '2')/1000,
+  digit: 2,
+  toshow: logTime
 }, {
-  title: '4',
-  subtitle: ''
+  title: (10*theTime + '3')/1000,
+  digit: 3,
+  toshow: logTime
 }, {
-  title: '5',
-  subtitle: ''
+  title: (10*theTime + '4')/1000,
+  digit: 4,
+  toshow: logTime
 }, {
-  title: '6',
-  subtitle: ''
+  title: (10*theTime + '5')/1000,
+  digit: 5,
+  toshow: logTime
 }, {
-  title: '7',
-  subtitle: ''
+  title: (10*theTime + '6')/1000,
+  digit: 6,
+  toshow: logTime
 }, {
-  title: '8',
-  subtitle: ''
+  title: (10*theTime + '7')/1000,
+  digit: 7,
+  toshow: logTime
 }, {
-  title: '9',
-  subtitle: ''
+  title: (10*theTime + '8')/1000,
+  digit: 8,
+  toshow: logTime
 }, {
-  title: '10',
-  subtitle: ''
-}, {
-  title: '11',
-  subtitle: ''
-}, {
-  title: '12',
-  subtitle: ''
-}, {
-  title: '13',
-  subtitle: ''
-}, {
-  title: '14',
-  subtitle: ''
-}, {
-  title: '15',
-  subtitle: ''
-}, {
-  title: '16',
-  subtitle: ''
-}, {
-  title: '17',
-  subtitle: ''
-}, {
-  title: '18',
-  subtitle: ''
-}, {
-  title: '19',
-  subtitle: ''
-}, {
-  title: '20',
-  subtitle: ''
+  title: (10*theTime + '9')/1000,
+  digit: 9,
+  toshow: logTime
 }];
+
+
+var dist = [{
+  title: 'Done',
+  digit: -1,
+  toshow: stats
+}, {
+  title: (10*theDistance + '0')/1000,
+  digit: 0,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '1')/1000,
+  digit: 1,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '2')/1000,
+  digit: 2,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '3')/1000,
+  digit: 3,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '4')/1000,
+  digit: 4,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '5')/1000,
+  digit: 5,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '6')/1000,
+  digit: 6,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '7')/1000,
+  digit: 7,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '8')/1000,
+  digit: 8,
+  toshow: logDist
+}, {
+  title: (10*theDistance + '9')/1000,
+  digit: 9,
+  toshow: logDist
+}];
+
 var stats = new UI.Card({
   title: "My Progress",
   body: "Sed aliquam augue et condimentum faucibus. Duis viverra felis urna, sit amet vulputate tellus aliquam at. Phasellus dignissim feugiat ante, sit amet venenatis augue varius id. Sed elit magna, tempus vel ex et, vulputate tristique felis. Quisque egestas quam at tortor accumsan tincidunt. Proin sapien eros, varius pharetra lectus commodo, varius posuere tortor. Donec placerat sem ut rutrum rhoncus. Quisque vestibulum ante sed lectus efficitur consectetur. Sed tincidunt bibendum blandit. Donec viverra blandit augue, ac condimentum nisl feugiat quis. Donec efficitur tempus ligula, non posuere augue sagittis ac. In tristique metus a dolor consectetur, et congue ligula molestie. Pellentesque efficitur in velit quis congue. Proin gravida in felis et ultrices. Aenean ut dolor mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-  scrollable: true
+  scrollable: false
 });
-var logform = new UI.Menu({
+
+
+var logTime = new UI.Menu({
   sections: [{
-    title: 'Distance in km/miles',
-    items: numbers
+    title: 'Time in 00:00:00;',
+    items: time
   }]
 });
+
+logTime.on('select', function(e) {
+  if (e.item.digit == -1) {
+    submit.show();
+  } else {
+    theDistance *=10;
+    theDistance += e.item.digit;
+    console.log(theTime);
+    logTime.show();
+  }
+});
+
+var logDist = new UI.Menu({
+  sections: [{
+    title: 'Distance in km/miles',
+    items: dist
+  }]
+});
+
+logDist.on('select', function(e) {
+  if (e.item.digit == -1) {
+    logTime.show();
+  } else {
+    theDistance *=10;
+    theDistance += e.item.digit;
+    console.log(theDistance);
+    logDist.show();
+  }
+});
+
+var submit = new UI.Card({
+  title: "Logged Activity",
+  body: "Distance: "+theDistance+"    "+"Time: "+theTime+"     ",
+  scrollable: false
+});
+
+submit.on('click', 'down', function(e) {
+  theDistance += 20;
+  submit.show();
+});
+
+
 var menuItems = [{
       title: 'Log Activity',
       subtitle: 'Track time, km, miles',
-      toshow: logform
+      toshow: logDist
     }, {
       title: 'Stats',
       subtitle: 'See your progress',
