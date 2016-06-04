@@ -8,50 +8,50 @@ var UI = require('ui');
 //var Vector2 = require('vector2');
 var theDistance = 0;
 var theTime = 0;
-var logTime, logDist, dist, time, stats, submit;
+var main, logTime, logDist, dist, time, stats, submit;
 
 var time = [{
   title: 'Done',
   digit: -1,
   toshow: stats
 }, {
-  title: (10*theTime + '0')/1000,
+  title: '0',
   digit: 0,
   toshow: logTime
 }, {
-  title: (10*theTime + '1')/1000,
+  title: '1',
   digit: 1,
   toshow: logTime
 }, {
-  title: (10*theTime + '2')/1000,
+  title: '2',
   digit: 2,
   toshow: logTime
 }, {
-  title: (10*theTime + '3')/1000,
+  title: '3',
   digit: 3,
   toshow: logTime
 }, {
-  title: (10*theTime + '4')/1000,
+  title: '4',
   digit: 4,
   toshow: logTime
 }, {
-  title: (10*theTime + '5')/1000,
+  title: '5',
   digit: 5,
   toshow: logTime
 }, {
-  title: (10*theTime + '6')/1000,
+  title: '6',
   digit: 6,
   toshow: logTime
 }, {
-  title: (10*theTime + '7')/1000,
+  title: '7',
   digit: 7,
   toshow: logTime
 }, {
-  title: (10*theTime + '8')/1000,
+  title: '8',
   digit: 8,
   toshow: logTime
 }, {
-  title: (10*theTime + '9')/1000,
+  title: '9',
   digit: 9,
   toshow: logTime
 }];
@@ -62,43 +62,43 @@ var dist = [{
   digit: -1,
   toshow: stats
 }, {
-  title: (10*theDistance + '0')/1000,
+  title: '0',
   digit: 0,
   toshow: logDist
 }, {
-  title: (10*theDistance + '1')/1000,
+  title: '1',
   digit: 1,
   toshow: logDist
 }, {
-  title: (10*theDistance + '2')/1000,
+  title: '2',
   digit: 2,
   toshow: logDist
 }, {
-  title: (10*theDistance + '3')/1000,
+  title: '3',
   digit: 3,
   toshow: logDist
 }, {
-  title: (10*theDistance + '4')/1000,
+  title: '4',
   digit: 4,
   toshow: logDist
 }, {
-  title: (10*theDistance + '5')/1000,
+  title: '5',
   digit: 5,
   toshow: logDist
 }, {
-  title: (10*theDistance + '6')/1000,
+  title: '6',
   digit: 6,
   toshow: logDist
 }, {
-  title: (10*theDistance + '7')/1000,
+  title: '7',
   digit: 7,
   toshow: logDist
 }, {
-  title: (10*theDistance + '8')/1000,
+  title: '8',
   digit: 8,
   toshow: logDist
 }, {
-  title: (10*theDistance + '9')/1000,
+  title: '9',
   digit: 9,
   toshow: logDist
 }];
@@ -119,10 +119,25 @@ var logTime = new UI.Menu({
 
 logTime.on('select', function(e) {
   if (e.item.digit == -1) {
+    var submit = new UI.Card({
+      title: "Activity",
+      body: theDistance+"km\n"+(Math.floor(theTime/10000))+":"+(Math.floor(theTime/100)-(Math.floor(theTime/10000))*100)+":"+(theTime%100)+";     ",
+      scrollable: false
+    });
+    
+    submit.on('select', function(e) {
+      main.show();
+    });
+    
+    submit.on('click', 'down', function(e) {
+      theDistance += 20;
+      submit.show();
+    });
+    
     submit.show();
   } else {
-    theDistance *=10;
-    theDistance += e.item.digit;
+    theTime *=10;
+    theTime += e.item.digit;
     console.log(theTime);
     logTime.show();
   }
@@ -137,6 +152,8 @@ var logDist = new UI.Menu({
 
 logDist.on('select', function(e) {
   if (e.item.digit == -1) {
+    theDistance /= 1000;
+    console.log('Distance: '+theDistance);
     logTime.show();
   } else {
     theDistance *=10;
