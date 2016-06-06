@@ -17,12 +17,15 @@ With Progress you will be able to:
 ##Features Roadmap
 Currently in development, the following are roadmap todos:
 - [x] Configure basic list UI on Pebble
-- [ ] Create input form for saving data on Pebble
-- [ ] Create statistics calculations and UI
-- [ ] Setup Firebase database to keep and serve data
+- [x] Create input form for saving data on Pebble
+- [x] Setup Firebase database to keep and serve data
 - [ ] Push data from Pebble to Firebase
 - [ ] Query Firebase and pull data to Pebble
+- [ ] Create statistics calculations and UI
 - [ ] Create password/unique identifier to differentiate data
+- [ ] Oauth Google, Facebook login
+- [ ] CSV output from andrewparadi.com website
+- [ ] Graphing and analysis web-app
 
 
 ##How to Get It
