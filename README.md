@@ -1,15 +1,15 @@
 # Progress for Pebble
 For millions of people who bike, run, or swim with non-smart tracking devices, there is rarely a way to extract or analyse this data. After writing my ride stats in a text file for a month, I realized that this would be a great simple app to have on my Pebble.
 
-Progress lets you save data from non-smart fitness trackers to the cloud! 
+Progress lets you save data from non-smart fitness trackers to the cloud!
 
 ![Progress Banner](http://andrewparadi.com/assets/article_images/2016-02-02-progress-pebble/mheader_v0.1c.png)
 
-With Progress you will be able to: 
-- Input your latest workout on your Pebble 
-- Track stats like your average speed, total distance, and total time 
-- Quickly scroll through your most recent workouts 
-- Export data online from a simple form at http://andrewparadi.com/progress-pebble/
+With Progress you will be able to:
+- Input your latest workout on your Pebble
+- Track stats like your average speed, total distance, and total time
+- Quickly scroll through your most recent workouts
+- Export data online from a simple form at [http://andrewparadi.com/progress-pebble/](http://www.andrewparadi.com/progress-pebble/?utm_source=github&utm_medium=referral&utm_campaign=progressPebble)
 
 ![v0.1 - 1](http://andrewparadi.com/assets/article_images/2016-02-02-progress-pebble/progress-0.1-3.png) ![v0.1 - 2](http://andrewparadi.com/assets/article_images/2016-02-02-progress-pebble/progress-0.1-4.png)
 
@@ -31,6 +31,9 @@ Currently in development, the following are roadmap todos:
 ##How to Get It
 Install the private nightly builds (stuff may not work): https://apps.getpebble.com/en_US/application/56ad85eed3cf022d44000001
 
-OR
+Learn more
+---
 
-Send an email to progress at andrewparadi.com and I'll let you know when it's all ready!
+- [Website](http://www.andrewparadi.com/progress-pebble/?utm_source=github&utm_medium=referral&utm_campaign=progressPebble)
+- [Email progress at andrewparadi.com](mailto:progress@andrewparadi.com)
+- [Other projects](http://www.andrewparadi.com/?utm_source=github&utm_medium=referral&utm_campaign=progressPebble)
