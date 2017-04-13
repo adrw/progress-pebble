@@ -1,4 +1,8 @@
-# Progress for Pebble
+Progress for Pebble
+---
+
+*Not under active development as of August 2016. Long live Pebble.*
+
 For millions of people who bike, run, or swim with non-smart tracking devices, there is rarely a way to extract or analyse this data. After writing my ride stats in a text file for a month, I realized that this would be a great simple app to have on my Pebble.
 
 Progress lets you save data from non-smart fitness trackers to the cloud!
@@ -14,7 +18,8 @@ With Progress you will be able to:
 ![v0.1 - 1](http://andrewparadi.com/assets/article_images/2016-02-02-progress-pebble/progress-0.1-3.png) ![v0.1 - 2](http://andrewparadi.com/assets/article_images/2016-02-02-progress-pebble/progress-0.1-4.png)
 
 
-##Features Roadmap
+Features Roadmap
+---
 Currently in development, the following are roadmap todos:
 - [x] Configure basic list UI on Pebble
 - [x] Create input form for saving data on Pebble
@@ -28,7 +33,8 @@ Currently in development, the following are roadmap todos:
 - [ ] Graphing and analysis web-app
 
 
-##How to Get It
+How to Get It
+---
 Install the private nightly builds (stuff may not work): https://apps.getpebble.com/en_US/application/56ad85eed3cf022d44000001
 
 Learn more
